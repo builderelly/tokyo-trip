@@ -1,0 +1,151 @@
+:root{
+  --bg:#fbf6f1; --card:#ffffff; --ink:#3a3330; --soft:#8c7f78;
+  --line:#efe4db; --accent:#e8857a; --accent-d:#d56a5e;
+  --elly:#e8857a; --dad:#5b8fb0; --jinyu:#6cae8f; --fam:#c79a4f;
+  --shadow:0 2px 10px rgba(120,90,70,.08);
+  --radius:18px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Gowun Dodum',-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+h1,h2,h3,.jua{font-family:'Jua',sans-serif;font-weight:400}
+
+/* hero */
+.hero{
+  background:linear-gradient(150deg,#f4a99c 0%,#e8857a 55%,#d56a5e 100%);
+  color:#fff;padding:48px 20px 38px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 0%,rgba(255,255,255,.25),transparent 45%);}
+.hero-inner{position:relative;z-index:1}
+.hero-emoji{font-size:44px;margin-bottom:6px}
+.hero h1{margin:0;font-size:30px;letter-spacing:1px}
+#hero-dates{margin:8px 0 2px;font-size:16px;opacity:.95}
+.hero-sub{margin:0;font-size:14px;opacity:.85}
+
+/* who bar */
+.who-bar{
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  padding:14px 16px 4px;max-width:760px;margin:0 auto;
+}
+.who-label{font-size:13px;color:var(--soft);margin-right:2px}
+.who-chip{
+  border:1.5px solid var(--line);background:var(--card);color:var(--soft);
+  padding:6px 14px;border-radius:999px;font-size:14px;font-family:'Jua',sans-serif;
+  cursor:pointer;transition:.15s;
+}
+.who-chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* day tabs */
+.daytabs{
+  position:sticky;top:0;z-index:20;background:var(--bg);
+  display:flex;gap:8px;overflow-x:auto;padding:12px 16px;
+  max-width:760px;margin:0 auto;scrollbar-width:none;
+  border-bottom:1px solid var(--line);
+}
+.daytabs::-webkit-scrollbar{display:none}
+.daytab{
+  flex:0 0 auto;border:none;background:var(--card);box-shadow:var(--shadow);
+  border-radius:14px;padding:8px 13px;text-align:center;cursor:pointer;
+  min-width:58px;transition:.15s;border:2px solid transparent;
+}
+.daytab .d{font-family:'Jua',sans-serif;font-size:15px;color:var(--ink);line-height:1.1}
+.daytab .w{font-size:11px;color:var(--soft)}
+.daytab.active{border-color:var(--accent);background:#fff}
+.daytab.active .d{color:var(--accent-d)}
+
+/* main */
+main{max-width:760px;margin:0 auto;padding:18px 16px 8px}
+.day-head{margin:6px 2px 14px}
+.day-head .theme{font-family:'Jua',sans-serif;font-size:21px}
+.day-head .hotel{font-size:13px;color:var(--soft);margin-top:3px}
+.day-note{
+  background:#fff5ec;border:1px solid #f5e2cf;border-radius:14px;
+  padding:10px 13px;font-size:13.5px;color:#9a6a3a;margin:12px 2px 18px;
+}
+
+/* timeline cards */
+.item{
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  margin-bottom:16px;overflow:hidden;
+}
+.item.dim{opacity:.4}
+.photo{
+  width:100%;height:170px;object-fit:cover;display:block;background:#f0e7df;
+}
+.photo-ph{
+  height:120px;display:flex;align-items:center;justify-content:center;font-size:50px;
+  background:linear-gradient(135deg,#f7ede4,#f2e0d4);
+}
+.item-body{padding:14px 16px 16px}
+.item-top{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
+.time{font-family:'Jua',sans-serif;font-size:13px;color:#fff;background:var(--accent);
+  padding:2px 10px;border-radius:999px}
+.who-tags{display:flex;gap:4px;margin-left:auto}
+.tag{font-size:11px;padding:2px 8px;border-radius:999px;color:#fff;font-family:'Jua',sans-serif}
+.tag.엘리{background:var(--elly)} .tag.아빠{background:var(--dad)}
+.tag.진유{background:var(--jinyu)} .tag.가족{background:var(--fam)}
+.item h3{margin:2px 0 6px;font-size:18px}
+.item .desc{font-size:14.5px;color:#5e544e;margin:0 0 12px}
+.item-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:5px;font-size:13.5px;
+  font-family:'Jua',sans-serif;border:none;cursor:pointer;border-radius:11px;
+  padding:8px 13px;text-decoration:none;transition:.15s;
+}
+.btn-map{background:#eef4f0;color:#3f7a5c}
+.btn-map:active{background:#e1ece5}
+.btn-c{background:#fbeeeb;color:var(--accent-d)}
+.btn-c:active{background:#f6e0db}
+.btn .ct{font-size:12px;opacity:.8}
+
+/* comments */
+.comments{border-top:1px solid var(--line);margin-top:13px;padding-top:12px;display:none}
+.comments.open{display:block}
+.cmt{display:flex;gap:8px;margin-bottom:10px}
+.cmt .av{width:28px;height:28px;border-radius:50%;flex:0 0 auto;color:#fff;
+  font-family:'Jua',sans-serif;font-size:12px;display:flex;align-items:center;justify-content:center}
+.cmt .av.엘리{background:var(--elly)} .cmt .av.아빠{background:var(--dad)}
+.cmt .av.진유{background:var(--jinyu)} .cmt .av.가족{background:var(--fam)}
+.cmt-bubble{background:#f7f1ec;border-radius:12px;padding:7px 11px;flex:1}
+.cmt-name{font-size:12px;color:var(--soft);font-family:'Jua',sans-serif}
+.cmt-text{font-size:14px;white-space:pre-wrap;word-break:break-word}
+.cmt-empty{font-size:13px;color:var(--soft);padding:2px 0 8px}
+.cmt-form{margin-top:6px}
+.cmt-whochips{display:flex;gap:5px;margin-bottom:7px}
+.mini-chip{border:1.5px solid var(--line);background:#fff;color:var(--soft);
+  padding:3px 11px;border-radius:999px;font-size:12.5px;font-family:'Jua',sans-serif;cursor:pointer}
+.mini-chip.on{color:#fff}
+.mini-chip.on[data-w="엘리"]{background:var(--elly);border-color:var(--elly)}
+.mini-chip.on[data-w="아빠"]{background:var(--dad);border-color:var(--dad)}
+.mini-chip.on[data-w="진유"]{background:var(--jinyu);border-color:var(--jinyu)}
+.cmt-input-row{display:flex;gap:7px}
+.cmt-input{flex:1;border:1.5px solid var(--line);border-radius:11px;padding:9px 11px;
+  font-size:14px;font-family:inherit;resize:none;background:#fff;color:var(--ink)}
+.cmt-input:focus{outline:none;border-color:var(--accent)}
+.cmt-send{background:var(--accent);color:#fff;border:none;border-radius:11px;
+  padding:0 15px;font-family:'Jua',sans-serif;font-size:14px;cursor:pointer}
+.cmt-send:disabled{opacity:.5}
+.cmt-note{font-size:12px;color:var(--soft);margin-top:8px}
+
+/* tips */
+.tips{max-width:760px;margin:8px auto 0;padding:8px 16px 10px}
+.tips h2{font-size:18px;margin:8px 2px 12px}
+.tip{background:var(--card);border-radius:14px;box-shadow:var(--shadow);
+  padding:12px 14px;margin-bottom:11px}
+.tip .th{font-family:'Jua',sans-serif;font-size:15px;margin-bottom:3px}
+.tip .td{font-size:13.5px;color:#5e544e}
+
+/* footer */
+.foot{text-align:center;padding:26px 20px 40px;color:var(--soft);font-size:13.5px}
+.foot-small{font-size:12px;opacity:.7;margin-top:4px}
+
+@media(min-width:620px){
+  main{padding-top:22px}
+  .photo{height:210px}
+}

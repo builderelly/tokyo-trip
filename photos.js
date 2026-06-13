@@ -1,3 +1,32 @@
-// 장소 사진 URL 매핑 (Places API로 받아둔 사진). 키는 item.id.
-// Places API 키 받으면 빌드 스크립트가 여기 채움. 없으면 이모지 카드로 표시.
-const PHOTOS = {};
+// 장소 사진 URL (Google Places API). 키는 item.id.
+const PHOTOS = {
+  "d1-arrive": "https://lh3.googleusercontent.com/place-photos/AJRVUZMMnJi7AJ5qVBhvcG3haRDTVKYSSYM2zqxIS7n56mWtVwoFsIA9gQwKBoKYsOz3NxTOcHXWESXLPvQp0tyLEHIm-JHmKeDaUGL3D1hAH-GyBVj9_is0e1rfdtl__JoetQTFIe9WLl3_rS-4V4s=s4800-w800",
+  "d1-jw": "https://lh3.googleusercontent.com/place-photos/AJRVUZMns8mIHx_LKdAIDu_Zij4KClq1JXuN8rG38iKjvr4SWluYvWDMat9SEfV9zzWUnL-_S5qpKH1-vTsfrudV5vNXafvmuXzaDT_T6I9AnqKPbVVJfk6emPdgAdzRYxRYx2vOXancZZro7dovQr0MHUCP=s4800-w800",
+  "d1-oedo": "https://lh3.googleusercontent.com/place-photos/AJRVUZPEn5NYstag3t_xDsoNMJ-4mkuVkE7YbhHuuKM-4jT6rTKnYPw-qcSUQWFleVHHdkryDmiIvXEYHfLKTuGdsTQtzxyHDEWQFPUwjlZpBBvSokoiWjSkAaLLnUvrqaRnnRNRvSbdhXg3Yd-Qins=s4800-w800",
+  "d1-gateway": "https://lh3.googleusercontent.com/place-photos/AJRVUZOEIwLL6zEkZuDZ2EzIR968-TtYcr_eCaDRhkNbgIvM3mlzDzseeuTRVwYDHRf5b2Kqqljwrm8gr6IuamgOavkA2CfI6r4QnySYpNP6tWpTEp6ffi6rHQoTh4XSXpz6UzeCpvYb7jE_q2ise5kfmbbw=s4800-w800",
+  "d1-aqua": "https://lh3.googleusercontent.com/place-photos/AJRVUZMcL5s-hhog_g6p7pyGRfDSrXzYg-UnxXnjHWyMIs-dgOCw9qXfKABnlIARUuy21uGaETrzc1DUgKuxBZl3IpPIXw0-kqjVB871lRlRPhWOD8OYlbaQLmzHKp8FY7L3YTyxeIqtMqwuxo-T-_Y=s4800-w800",
+  "d2-toolbox": "https://lh3.googleusercontent.com/place-photos/AJRVUZPBSZxRrfhlGyUsES-Lj1Vsu5q_b_storEJE_cQDrccf_UNYfwIh7Ack6MvWpc_S6FJ_O9i_LQq9M980owe_65PS56D4tkObNbGMcgbjpMa4hbURu-OsNzlKmYujhL5PRp-VgLSxexKntF4ug=s4800-w800",
+  "d2-travelers": "https://lh3.googleusercontent.com/place-photos/AJRVUZO0uYyJim9rKFZ6DM9qtDUh9oB_DTN_UMajRoLuQVGrm5DMRVrUNh_adsYMQk4FwSZo6cYispEMkpMpQ3DDcSYACwRlcH7_zFyw25XqEtiJaKlnkKBOpPuVAhwuyn8gyisQlgQyIMzjtZ6CeA=s4800-w800",
+  "d2-porter": "https://lh3.googleusercontent.com/place-photos/AJRVUZNjnI21YE3OUJJnTNBN7eee0pWgyrqDpsfHE_kEAL7nqEjwdtAsh-kImD0S-YQOPyvxDB5kDLE_HgZz1NAfy6sBnjagIK17yFPKbMJJiT0CgTyU1d0JXzdH48GP2GvH1F5Ngh9dd0Er0_hv1Xg=s4800-w800",
+  "d2-kiddy": "https://lh3.googleusercontent.com/place-photos/AJRVUZNkKWi60xfwj2Trv5gcmM76M9JO0tUm8i-1Ggf_pJ6QsJhtoNPPyaubEkXC0A9DOJ9Q09l0VJUF00zjg1mg0AbfLKuWqrwGZ9kNzFjKkETs3T9fN4XlO86wsZhXqDfdZKClZuCmkf1qwHrZRQ=s4800-w800",
+  "d2-graniph": "https://lh3.googleusercontent.com/place-photos/AJRVUZOkoZYTdENduvsFGDjWmvT0oR21bYcX1JSdAbg_ssPIpSZXwwb2dQ8wOxRIHk-XPfSTfr2guNlk90IHDvf4OXzHYTdXXaJLaskGq918b6QnrYtzZ9vBs-x-lXSBmolCOqFTVWbVPrI7McPqHQ=s4800-w800",
+  "d2-yarn": "https://lh3.googleusercontent.com/place-photos/AJRVUZNMeC4Ht5sEUaUtVV_1XmDCfWcIFdKyDB0BCyf7546xOYt6VyTsE7qaArfRuP2ZiQRSTaukNzZ6D0jJv6BJFx51fmLWW7kiTAgDtVB_trqMEKwEnAv5H39B9Z1Ae32sSC0kEqIS2KDdO7OJvQ=s4800-w800",
+  "d2-warataco": "https://lh3.googleusercontent.com/place-photos/AJRVUZPdEglpGKZY2hfTT5OUfflW-c0n7Oz-dXcmmGNK2eaiWvqD4IsmsEu0Qo9e_CJE3CTcu_31QXoJYI7lnDlXVVnUX4gOPb0ClsFM9nJ1-UYzQdIiRu6f_qRo_L2wMauNx985o_aWGaXGYPBJ=s4800-w800",
+  "d2-sky": "https://lh3.googleusercontent.com/place-photos/AJRVUZOnbtDY5Yrn3cRuD0jcuhl8cfxpmtOLz-bMPpXxONKBslMxeRvtcE6UCeWaa-c72TGRMmoM-f_yfUX3pHv7irEPtBXzVnrxGSohVeNQQe89DmqRlKisyeQOSgWsoYZYdG0P-tv8YKezoQdYYIJM5YxUdg=s4800-w800",
+  "d2-parco": "https://lh3.googleusercontent.com/place-photos/AJRVUZN4YVKyEsVz9wA5gckBl_sEXwHt26Bq5VqhqAJwq1xk-3eBLJbN6HhLoeWwm6EdmRytEEwDojdmcV_D84uLqwN8qDUs1u94d_eWXC4vGi9BqbVNLF5Mxr9zV_RY703ZORtJYOkDPpv75moSUMv5Iyg3=s4800-w800",
+  "d2-gonpachi": "https://lh3.googleusercontent.com/place-photos/AJRVUZPeVFSt1Ao-mmxoUGfQTpuvnJPAQkR0d7_FlVV8kuKg-iJ9T1-Nvqi4rxvMBGHoFW3-VUcbMkkRUCwKaAZ-0lkwaIwkCYB2WVoC-RWHVOoRbp2SwsGpiU3AgEpuUyHQj9a1bUpjTFPJxmVcvQ=s4800-w800",
+  "d3-insect": "https://lh3.googleusercontent.com/place-photos/AJRVUZOaaRcv2TmPW4Ya6UkqTDiLoHKDovef35CZjxCTwIndzSct9pwTBpLyQC6dQyRDyqQ9XMyUSA9sA6sw-JEbR_ImnYAaHILflNlG2yI61J3xTOf5D306uI5vbY4ZrDuRsOaAmBUAxrbhbbGxLjN_wbrOUA=s4800-w800",
+  "d3-kichijoji": "https://lh3.googleusercontent.com/place-photos/AJRVUZPjBKvmomhTF2__HydcaEqSs4Yrv6En6ITFQPhHHc00UOuSN99Ebp-jUwTY7Pb0Ihf2BR4jCW5WMmA8dhr3eRia7GhPIRArW7TbgKGuXQA45Njo3QCIcgu2SeJsX9JNqu8zm0kQZX8b-7NQZA=s4800-w800",
+  "d3-yuria": "https://lh3.googleusercontent.com/place-photos/AJRVUZN7or5hfvvERLav4_0MbYZ71aZnDs9bm5ALWNbKHubEqrpi54_KB1RJqawp5r1khrefw4VyqAQTgHV0A_lAXUvUxaDFvgFdsNIoORlBLSQJ0CDTcAVDiP4vuwc5706IlKSMNaTziV-T9uedrki-zApWlQ=s4800-w800",
+  "d3-tagoto": "https://lh3.googleusercontent.com/place-photos/AJRVUZPNaE0iR5pnk3Hd9qbXZS5zdYVXR0OVDG6-DKdbrJQt0p2rZ77LgPF4Peza-c9huWTVQej5_tuSjjz5nAsl1D7LGajyFqxiXAwcBlV9_gW2X4CCIz0I-UkmwSn-ye-UN1uUmQU_qsTMTudvHuw=s4800-w800",
+  "d4-romancecar": "https://lh3.googleusercontent.com/place-photos/AJRVUZMfnj97e__sxGSO-BRsqJ97rAsU0sZW5oLhU5YVA_SKRPOGtrM7mAb9rcPrldsWiK7w4uSGwjN1DJmLbZllrMyDyQw-uVkMIcEOrNRKPVZ4T4kO3cFyaMg6502ry6p1bDywwInzf7gupFzIffM=s4800-w800",
+  "d4-ryokan": "https://lh3.googleusercontent.com/place-photos/AJRVUZNZc6_ZjJPs_UlOEGoYxWBeu3SFDl3bwsBYE8AkXnIByQ5hd0-7ekqErUECIbKo8IlDzObVqc67OsxtFiQN8aeKapkLGUygHq1CVux7YGBgaFmC1133Eu2PnwuvhSDFRJv5cMWUo2BsPoTLJA=s4800-w800",
+  "d5-onsen": "https://lh3.googleusercontent.com/place-photos/AJRVUZNIfFAez8gMoQYVN0jhxXcvSk1HA51c5y-GCREc2j5Ya63eQVfTTxHlsOEmCRZkvDrYMHm0ej3Up3kAOBu4nObATv4H2GvVNuuRNKL2qM-jkmeEIiC5jijfVcvrWImV7zK7ILSeVPqGN_eYqw=s4800-w800",
+  "d5-dad": "https://lh3.googleusercontent.com/place-photos/AJRVUZMMnJi7AJ5qVBhvcG3haRDTVKYSSYM2zqxIS7n56mWtVwoFsIA9gQwKBoKYsOz3NxTOcHXWESXLPvQp0tyLEHIm-JHmKeDaUGL3D1hAH-GyBVj9_is0e1rfdtl__JoetQTFIe9WLl3_rS-4V4s=s4800-w800",
+  "d5-charstreet": "https://lh3.googleusercontent.com/place-photos/AJRVUZNHJuNQev52AA_qDpQyACjiv4Yg5-uBEwo9huIXLQChb2N0RW6lzoEx68n0c6kWg8fkhxWVuMY7jlsoKFjxq_sRBNq2cU2kKaghg4btKx61089qolgITvsxoQgyaSFVojibw78yoAGXJ0AGblbVNPkO=s4800-w800",
+  "d5-jimbocho": "https://lh3.googleusercontent.com/place-photos/AJRVUZMGGKJ3Ys4jQDx6yDDYQKgMDH1bAuGSj0ZABibZxHuHBgKRTnm3MiIJdJzeFP2Ed_odDucX3zjs7Vm-jmDXoer3FJ_V80ZcCqIN6jXlgL9fY9naDpC_UqibBeBdUkjO99PdbnPD2NIkLCgf6LA=s4800-w800",
+  "d5-akiba": "https://lh3.googleusercontent.com/place-photos/AJRVUZOufBZrkITNnitZt5TEGeAdeAjdOn8JCmMClz-oJUDYZeeao-rT0GPsJNR7j_LlNON9_FYbEQut5_bom_FOtxi67uMbud8mAZqSTAfdvkbgF3Cq6I6zQWpmryOJT0_Bx-4d7kg6C6JU3QZC7VTRyAUg=s4800-w800",
+  "d5-marriott": "https://lh3.googleusercontent.com/place-photos/AJRVUZP3S08LyMEr9XZ5UhHWrsL0_fWJiUQjS4Nj2sn87IA_-gj-uBbK7fVrtHUR0IZHcWcD7wqndeLDMNMs0UMshamvEgAPvILfH3omV3zER9PkuVJSH8EeNsN2Z59IM-ns1UZIWntOi6Eqp4H7WxzQc4gx-w=s4800-w480",
+  "d6-nakano": "https://lh3.googleusercontent.com/place-photos/AJRVUZOILOQFO8NpvsOSedw2rXnUg8eHjP_ODwqScbZA0h_MfutgAZ38ply1my0G1NEaqqYuOUN9F7hiPMLc_0LCfaPsV7Hrj4F2z0fUAGLOB0v-OlFHijKdGJJACjRmJlqFX6JD5baNONcQCUj44RthAl0m4Q=s4800-w800",
+  "d6-fly": "https://lh3.googleusercontent.com/place-photos/AJRVUZMMnJi7AJ5qVBhvcG3haRDTVKYSSYM2zqxIS7n56mWtVwoFsIA9gQwKBoKYsOz3NxTOcHXWESXLPvQp0tyLEHIm-JHmKeDaUGL3D1hAH-GyBVj9_is0e1rfdtl__JoetQTFIe9WLl3_rS-4V4s=s4800-w800"
+};

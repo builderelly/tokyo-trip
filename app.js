@@ -87,6 +87,16 @@ function render() {
   // 댓글 토글 버튼
   $$("#app [data-toggle]").forEach(b =>
     b.onclick = () => toggleComments(b.dataset.toggle));
+  // 이 날의 댓글 자동 미리 불러오기 (개수 뱃지 표시)
+  prefetchDay(day);
+}
+
+/* --- 현재 날의 댓글 미리 로드 (펼치지 않고 개수만) --- */
+const loadingSet = new Set();
+function prefetchDay(day) {
+  day.items.forEach(it => {
+    if (commentCache[it.id] === undefined && !loadingSet.has(it.id)) fetchComments(it.id);
+  });
 }
 
 /* --- 팁 --- */
@@ -98,8 +108,8 @@ function toggleComments(itemId) {
   const box = $("#cm-" + itemId);
   if (box.classList.contains("open")) { box.classList.remove("open"); return; }
   box.classList.add("open");
-  renderComments(itemId);
-  loadComments(itemId);
+  renderComments(itemId);   // 캐시 있으면 즉시 표시
+  fetchComments(itemId);    // 최신으로 갱신
 }
 
 function renderComments(itemId) {
@@ -144,14 +154,18 @@ function renderComments(itemId) {
 function escapeHTML(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
 
 /* --- 서버 통신 (Apps Script) --- */
-async function loadComments(itemId) {
-  if (!CONFIG.COMMENTS_API) { commentCache[itemId] = commentCache[itemId] || []; renderComments(itemId); refreshCount(itemId); return; }
+async function fetchComments(itemId) {
+  if (!CONFIG.COMMENTS_API) { commentCache[itemId] = commentCache[itemId] || []; refreshCount(itemId); return; }
+  loadingSet.add(itemId);
   try {
     const r = await fetch(`${CONFIG.COMMENTS_API}?item=${encodeURIComponent(itemId)}`);
     const data = await r.json();
     commentCache[itemId] = data.comments || [];
   } catch (e) { commentCache[itemId] = commentCache[itemId] || []; }
-  renderComments(itemId); refreshCount(itemId);
+  loadingSet.delete(itemId);
+  refreshCount(itemId);
+  const box = $("#cm-" + itemId);
+  if (box && box.classList.contains("open")) renderComments(itemId);
 }
 
 async function postComment(itemId, who, text) {

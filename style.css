@@ -112,9 +112,11 @@ main{max-width:760px;margin:0 auto;padding:18px 16px 8px}
   font-family:'Jua',sans-serif;font-size:12px;display:flex;align-items:center;justify-content:center}
 .cmt .av.엘리{background:var(--elly)} .cmt .av.안드레스{background:var(--dad)}
 .cmt .av.진유{background:var(--jinyu)} .cmt .av.가족{background:var(--fam)}
-.cmt-bubble{background:#f7f1ec;border-radius:12px;padding:7px 11px;flex:1}
-.cmt-name{font-size:12px;color:var(--soft);font-family:'Jua',sans-serif}
+.cmt-bubble{background:#f7f1ec;border-radius:12px;padding:8px 11px;flex:1}
 .cmt-text{font-size:14px;white-space:pre-wrap;word-break:break-word}
+.cmt-del{background:none;border:none;color:#cabdb4;font-size:19px;line-height:1;
+  cursor:pointer;padding:0 2px;align-self:center;flex:0 0 auto}
+.cmt-del:active{color:var(--accent-d)}
 .cmt-empty{font-size:13px;color:var(--soft);padding:2px 0 8px}
 .cmt-form{margin-top:6px}
 .cmt-whochips{display:flex;gap:5px;margin-bottom:7px}

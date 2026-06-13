@@ -120,9 +120,9 @@ function renderComments(itemId) {
   else if (list.length === 0) listHTML = `<div class="cmt-empty">아직 댓글이 없어요. 첫 의견을 남겨봐!</div>`;
   else listHTML = list.map(c => `
     <div class="cmt">
-      <div class="av ${c.who}">${c.who[0]}</div>
-      <div class="cmt-bubble"><div class="cmt-name">${c.name || c.who}</div>
-        <div class="cmt-text">${escapeHTML(c.text)}</div></div>
+      <div class="av ${c.who}" title="${c.name || c.who}">${c.who[0]}</div>
+      <div class="cmt-bubble"><div class="cmt-text">${escapeHTML(c.text)}</div></div>
+      ${c.ts ? `<button class="cmt-del" data-del="${c.ts}" title="삭제">×</button>` : ""}
     </div>`).join("");
 
   const apiReady = !!CONFIG.COMMENTS_API;
@@ -149,6 +149,9 @@ function renderComments(itemId) {
   function updateSend() { send.disabled = !(who && ta.value.trim() && CONFIG.COMMENTS_API); }
   ta.oninput = () => { ta.style.height = "auto"; ta.style.height = ta.scrollHeight + "px"; updateSend(); };
   send.onclick = () => postComment(itemId, who, ta.value.trim());
+  // 삭제 버튼
+  $$(".cmt-del", box).forEach(d =>
+    d.onclick = () => deleteComment(itemId, d.dataset.del));
 }
 
 function escapeHTML(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
@@ -178,9 +181,23 @@ async function postComment(itemId, who, text) {
       headers: { "Content-Type": "text/plain;charset=utf-8" } // Apps Script CORS 회피
     });
     (commentCache[itemId] = commentCache[itemId] || []).push(payload);
-  } catch (e) { alert("전송 실패 — 인터넷 확인 후 다시!"); }
+    renderComments(itemId); refreshCount(itemId);
+    fetchComments(itemId); // 서버에서 ts 포함해 다시 받아 정합 맞춤 (삭제 가능해짐)
+  } catch (e) { alert("전송 실패 — 인터넷 확인 후 다시!"); renderComments(itemId); }
   send.textContent = "전송";
+}
+
+async function deleteComment(itemId, ts) {
+  if (!confirm("이 댓글을 삭제할까?")) return;
+  commentCache[itemId] = (commentCache[itemId] || []).filter(c => String(c.ts) !== String(ts));
   renderComments(itemId); refreshCount(itemId);
+  try {
+    await fetch(CONFIG.COMMENTS_API, {
+      method: "POST", body: JSON.stringify({ action: "delete", item: itemId, ts: ts }),
+      headers: { "Content-Type": "text/plain;charset=utf-8" }
+    });
+  } catch (e) {}
+  fetchComments(itemId); // 서버 기준으로 재확인
 }
 
 function refreshCount(itemId) {

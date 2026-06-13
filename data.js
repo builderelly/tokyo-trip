@@ -3,7 +3,7 @@
 const TRIP = {
   "title": "도쿄 가족여행",
   "dates": "2026. 7. 5 (일) – 7. 10 (금)",
-  "subtitle": "엘리 · 아빠 · 진유",
+  "subtitle": "엘리 · 안드레스 · 진유",
   "days": [
     {
       "id": "d1", "date": "7/5", "weekday": "일",
@@ -20,7 +20,7 @@ const TRIP = {
         { "id": "d1-oedo", "time": "오후", "emoji": "🏺", "title": "오에도 골동시장", "who": ["엘리"],
           "desc": "도쿄 최대 야외 앤티크 플리마켓 (마루노우치, ~16시). 에도·메이지 시대 도자기, 100년 전 물건들. 한 달에 두 번만 열리는데 마침 이날!",
           "search": "Oedo Antique Market Tokyo International Forum", "lat": 35.6772, "lon": 139.7638 },
-        { "id": "d1-gateway", "time": "저녁", "emoji": "🏙️", "title": "타카나와 게이트웨이 시티", "who": ["아빠"],
+        { "id": "d1-gateway", "time": "저녁", "emoji": "🏙️", "title": "타카나와 게이트웨이 시티", "who": ["안드레스"],
           "desc": "호텔 코앞 신상 재개발 지구. 쿠마 켄고 건축 + 뮤지엄·라이브러리. 산책 겸 구경.",
           "search": "Takanawa Gateway City", "lat": 35.6356, "lon": 139.7404 },
         { "id": "d1-aqua", "time": "저녁", "emoji": "🐬", "title": "아쿠아파크 시나가와", "who": ["진유"],
@@ -40,7 +40,7 @@ const TRIP = {
         { "id": "d2-travelers", "time": "오전", "emoji": "📓", "title": "트래블러스 팩토리 (나카메구로)", "who": ["엘리"],
           "desc": "트래블러스 노트 본진. 여행·기록 감성 소품 가득.",
           "search": "Traveler's Factory Nakameguro", "lat": 35.6447, "lon": 139.6995 },
-        { "id": "d2-porter", "time": "오후", "emoji": "🎒", "title": "포터 오모테산도", "who": ["아빠"],
+        { "id": "d2-porter", "time": "오후", "emoji": "🎒", "title": "포터 오모테산도", "who": ["안드레스"],
           "desc": "요시다카방 플래그십. 포터 가방 풀 라인업 + 한정판.",
           "search": "PORTER Omotesando", "lat": 35.6663, "lon": 139.7095 },
         { "id": "d2-kiddy", "time": "오후", "emoji": "🧸", "title": "키디랜드 하라주쿠", "who": ["진유"],
@@ -55,7 +55,7 @@ const TRIP = {
         { "id": "d2-warataco", "time": "간식", "emoji": "🐙", "title": "와라타코 (타코야키)", "who": ["가족"],
           "desc": "하라주쿠 타코야키 맛집. 걷다가 간식 타임.",
           "search": "Warataco Harajuku takoyaki", "lat": null, "lon": null },
-        { "id": "d2-sky", "time": "늦오후", "emoji": "🌆", "title": "시부야 스카이 (스크램블 스퀘어)", "who": ["아빠"],
+        { "id": "d2-sky", "time": "늦오후", "emoji": "🌆", "title": "시부야 스카이 (스크램블 스퀘어)", "who": ["안드레스"],
           "desc": "시부야역 위 옥상 전망대. 스크램블 교차로를 위에서!",
           "search": "Shibuya Sky observation deck", "lat": 35.658, "lon": 139.7016 },
         { "id": "d2-parco", "time": "늦오후", "emoji": "🎮", "title": "시부야 파르코 + RofJ 점프샵", "who": ["진유", "엘리"],
@@ -76,7 +76,7 @@ const TRIP = {
           "desc": "진유 필수 코스! 16m 나비 모양 대온실에 나비 1,000마리가 날아다님. 장수풍뎅이·사슴벌레 전시까지. 반나절 잡았어.",
           "search": "Tama Zoological Park insectarium", "lat": 35.6489, "lon": 139.4019 },
         { "id": "d3-kichijoji", "time": "오후", "emoji": "🚶", "title": "기치조지 산책", "who": ["가족"],
-          "desc": "36 Sublo(아기자기 문구) + 뜨개샵(엘리), 하모니카 요코초 골목 산책(아빠). 동네 자체가 좋은 곳.",
+          "desc": "36 Sublo(아기자기 문구) + 뜨개샵(엘리), 하모니카 요코초 골목 산책(안드레스). 동네 자체가 좋은 곳.",
           "search": "36 Sublo Kichijoji", "lat": 35.7035, "lon": 139.58 },
         { "id": "d3-yuria", "time": "카페", "emoji": "🍨", "title": "유리아 페무페루 (킷사텐)", "who": ["가족"],
           "desc": "동화책 같은 앤틱 찻집. 크림소다 + 바닐라 아이스크림. 진유도 좋아할 분위기.",
@@ -102,14 +102,14 @@ const TRIP = {
     },
     {
       "id": "d5", "date": "7/9", "weekday": "목",
-      "theme": "도쿄 복귀 · 아빠 귀국 ✈️ · 진보초+아키하바라",
+      "theme": "도쿄 복귀 · 안드레스 귀국 ✈️ · 진보초+아키하바라",
       "hotel": "도쿄 메리어트 시나가와 (엘리·진유)",
-      "note": "여기서 일행이 갈라짐 — 아빠는 귀국, 엘리·진유는 하루 더!",
+      "note": "여기서 일행이 갈라짐 — 안드레스는 귀국, 엘리·진유는 하루 더!",
       "items": [
         { "id": "d5-onsen", "time": "오전", "emoji": "♨️", "title": "아침 온천 → 도쿄 복귀", "who": ["가족"],
           "desc": "료칸 조식 + 마지막 온천 → 로망스카로 도쿄 복귀.",
           "search": "Gora Station Hakone", "lat": 35.2486, "lon": 139.0508 },
-        { "id": "d5-dad", "time": "오후", "emoji": "✈️", "title": "아빠 하네다 귀국", "who": ["아빠"],
+        { "id": "d5-dad", "time": "오후", "emoji": "✈️", "title": "안드레스 하네다 귀국", "who": ["안드레스"],
           "desc": "하코네→하네다 ~2.5시간 고려해서 오후/저녁 비행기. 먼저 안녕!",
           "search": "Haneda Airport Terminal 3", "lat": 35.5444, "lon": 139.7689 },
         { "id": "d5-charstreet", "time": "오후", "emoji": "👒", "title": "도쿄역 캐릭터 스트리트", "who": ["엘리", "진유"],
@@ -145,7 +145,7 @@ const TRIP = {
     { "id": "tip-ic", "emoji": "💳", "title": "교통카드 (스이카)",
       "desc": "셋 다 실물 카드 (한국 갤럭시는 모바일 스이카 안 됨). 도착날 하네다 T3에서 발급. 충전은 편의점에서 \"스이카 차지 오네가이시마스\" 하면 끝 — 편의점 결제도 이 카드로 가능. 하루 1인 ¥1,500~2,500 정도." },
     { "id": "tip-flight", "emoji": "✈️", "title": "항공편",
-      "desc": "대한항공 김포↔하네다. 가는 편 7/5 09:00→11:20, 오는 편 7/10 19:55→22:15. 아빠는 7/9 별도 귀국." },
+      "desc": "대한항공 김포↔하네다. 가는 편 7/5 09:00→11:20, 오는 편 7/10 19:55→22:15. 안드레스는 7/9 별도 귀국." },
     { "id": "tip-rain", "emoji": "☔", "title": "장마 플랜B",
       "desc": "7월 초는 장마철. 비 많이 오는 날은 이케부쿠로 선샤인시티(가챠 백화점 3,000대 + 수족관) 실내 코스로 변경." }
   ]

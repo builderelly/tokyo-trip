@@ -88,7 +88,7 @@ main{max-width:760px;margin:0 auto;padding:18px 16px 8px}
   padding:2px 10px;border-radius:999px}
 .who-tags{display:flex;gap:4px;margin-left:auto}
 .tag{font-size:11px;padding:2px 8px;border-radius:999px;color:#fff;font-family:'Jua',sans-serif}
-.tag.엘리{background:var(--elly)} .tag.아빠{background:var(--dad)}
+.tag.엘리{background:var(--elly)} .tag.안드레스{background:var(--dad)}
 .tag.진유{background:var(--jinyu)} .tag.가족{background:var(--fam)}
 .item h3{margin:2px 0 6px;font-size:18px}
 .item .desc{font-size:14.5px;color:#5e544e;margin:0 0 12px}
@@ -110,7 +110,7 @@ main{max-width:760px;margin:0 auto;padding:18px 16px 8px}
 .cmt{display:flex;gap:8px;margin-bottom:10px}
 .cmt .av{width:28px;height:28px;border-radius:50%;flex:0 0 auto;color:#fff;
   font-family:'Jua',sans-serif;font-size:12px;display:flex;align-items:center;justify-content:center}
-.cmt .av.엘리{background:var(--elly)} .cmt .av.아빠{background:var(--dad)}
+.cmt .av.엘리{background:var(--elly)} .cmt .av.안드레스{background:var(--dad)}
 .cmt .av.진유{background:var(--jinyu)} .cmt .av.가족{background:var(--fam)}
 .cmt-bubble{background:#f7f1ec;border-radius:12px;padding:7px 11px;flex:1}
 .cmt-name{font-size:12px;color:var(--soft);font-family:'Jua',sans-serif}
@@ -122,7 +122,7 @@ main{max-width:760px;margin:0 auto;padding:18px 16px 8px}
   padding:3px 11px;border-radius:999px;font-size:12.5px;font-family:'Jua',sans-serif;cursor:pointer}
 .mini-chip.on{color:#fff}
 .mini-chip.on[data-w="엘리"]{background:var(--elly);border-color:var(--elly)}
-.mini-chip.on[data-w="아빠"]{background:var(--dad);border-color:var(--dad)}
+.mini-chip.on[data-w="안드레스"]{background:var(--dad);border-color:var(--dad)}
 .mini-chip.on[data-w="진유"]{background:var(--jinyu);border-color:var(--jinyu)}
 .cmt-input-row{display:flex;gap:7px}
 .cmt-input{flex:1;border:1.5px solid var(--line);border-radius:11px;padding:9px 11px;

@@ -120,7 +120,7 @@ function renderComments(itemId) {
     ${listHTML}
     <div class="cmt-form">
       <div class="cmt-whochips">
-        ${["엘리", "아빠", "진유"].map(w => `<button class="mini-chip" data-w="${w}">${w}</button>`).join("")}
+        ${["엘리", "안드레스", "진유"].map(w => `<button class="mini-chip" data-w="${w}">${w}</button>`).join("")}
       </div>
       <div class="cmt-input-row">
         <textarea class="cmt-input" rows="1" placeholder="${apiReady ? "의견 남기기…" : "댓글 기능 연결 준비 중 💬"}" ${apiReady ? "" : "disabled"}></textarea>

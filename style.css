@@ -113,6 +113,9 @@ main{max-width:760px;margin:0 auto;padding:18px 16px 8px}
 .cmt .av.엘리{background:var(--elly)} .cmt .av.안드레스{background:var(--dad)}
 .cmt .av.진유{background:var(--jinyu)} .cmt .av.가족{background:var(--fam)}
 .cmt-bubble{background:#f7f1ec;border-radius:12px;padding:8px 11px;flex:1}
+.cmt-name{font-size:12px;font-weight:700;margin-bottom:2px;color:var(--soft)}
+.cmt-name.엘리{color:var(--elly)} .cmt-name.안드레스{color:var(--dad)}
+.cmt-name.진유{color:var(--jinyu)} .cmt-name.가족{color:var(--fam)}
 .cmt-text{font-size:14px;white-space:pre-wrap;word-break:break-word}
 .cmt-del{background:none;border:none;color:#cabdb4;font-size:19px;line-height:1;
   cursor:pointer;padding:0 2px;align-self:center;flex:0 0 auto}

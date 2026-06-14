@@ -121,7 +121,7 @@ function renderComments(itemId) {
   else listHTML = list.map(c => `
     <div class="cmt">
       <div class="av ${c.who}" title="${c.name || c.who}">${c.who[0]}</div>
-      <div class="cmt-bubble"><div class="cmt-text">${escapeHTML(c.text)}</div></div>
+      <div class="cmt-bubble"><div class="cmt-name ${c.who}">${escapeHTML(c.name || c.who)}</div><div class="cmt-text">${escapeHTML(c.text)}</div></div>
       ${c.ts ? `<button class="cmt-del" data-del="${c.ts}" title="삭제">×</button>` : ""}
     </div>`).join("");
 

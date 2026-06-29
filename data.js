@@ -23,6 +23,9 @@ const TRIP = {
         { "id": "d1-gateway", "time": "저녁", "emoji": "🏙️", "title": "타카나와 게이트웨이 시티", "who": ["안드레스"],
           "desc": "호텔 코앞 신상 재개발 지구. 쿠마 켄고 건축 + 뮤지엄·라이브러리. 산책 겸 구경.",
           "search": "Takanawa Gateway City", "lat": 35.6356, "lon": 139.7404 },
+        { "id": "d1-footbath", "time": "저녁", "emoji": "♨️", "title": "MoN 루프탑 족욕 테라스", "who": ["가족"],
+          "desc": "게이트웨이 시티 안 MoN 미술관 6층 옥상의 무료 족욕 테라스. 풀·나무에 둘러싸인 반야외 공간 — 더운 7월엔 냉수 족욕으로 발 담그며 쉬기 딱. 10–21시, 무료.",
+          "search": "MoN Takanawa footbath terrace", "lat": 35.6359, "lon": 139.74 },
         { "id": "d1-aqua", "time": "저녁", "emoji": "🐬", "title": "아쿠아파크 시나가와", "who": ["진유"],
           "desc": "돌고래 쇼 + 미디어아트 수족관. 시나가와역 바로 앞이라 저녁에 가볍게.",
           "search": "Maxell Aqua Park Shinagawa", "lat": 35.6285, "lon": 139.7388 }
@@ -40,6 +43,9 @@ const TRIP = {
         { "id": "d2-travelers", "time": "오전", "emoji": "📓", "title": "트래블러스 팩토리 (나카메구로)", "who": ["엘리"],
           "desc": "트래블러스 노트 본진. 여행·기록 감성 소품 가득.",
           "search": "Traveler's Factory Nakameguro", "lat": 35.6447, "lon": 139.6995 },
+        { "id": "d2-kakura", "time": "점심", "emoji": "🍛", "title": "Kakura 약선 카레 (나카메구로)", "who": ["가족"],
+          "desc": "식べ로그 나카메구로 카레 1위. 27종 향신료·약재로 하루 종일 곤 약선 카레 — 식용유·밀가루·화학조미료 없이 속 편한 맛. 나카메구로 쇼핑하다 점심으로.",
+          "search": "香食楽 中目黒 Kakura curry", "lat": 35.6409, "lon": 139.6952 },
         { "id": "d2-porter", "time": "오후", "emoji": "🎒", "title": "포터 오모테산도", "who": ["안드레스"],
           "desc": "요시다카방 플래그십. 포터 가방 풀 라인업 + 한정판.",
           "search": "PORTER Omotesando", "lat": 35.6663, "lon": 139.7095 },
@@ -61,9 +67,15 @@ const TRIP = {
         { "id": "d2-parco", "time": "늦오후", "emoji": "🎮", "title": "시부야 파르코 + RofJ 점프샵", "who": ["진유", "엘리"],
           "desc": "파르코: 닌텐도 도쿄 + 포켓몬센터 + 캡콤. 미야시타파크 2F의 RofJ: 점프 애니 라이프스타일 (원피스·나루토·헌터 굿즈).",
           "search": "Nintendo TOKYO Shibuya PARCO", "lat": 35.6615, "lon": 139.6985 },
-        { "id": "d2-gonpachi", "time": "저녁", "emoji": "🍢", "title": "곤파치 니시아자부 (저녁)", "who": ["가족"],
-          "desc": "영화 〈킬빌〉의 그 식당. 소바·꼬치·튀김. 시부야에서 한 정거장.",
-          "search": "Gonpachi Nishi-Azabu", "lat": null, "lon": null }
+        { "id": "d2-ryan", "time": "늦오후", "emoji": "🍜", "title": "雷庵 라이안 소바 (시부야)", "who": ["가족"],
+          "desc": "엘리가 가본 시부야 소바집. 토미가야 골목, 오픈키친에서 면 뽑는 거 보며 카운터·야외석에서 한 그릇. 점심이나 이른 저녁 대안.",
+          "search": "雷庵 Ryan soba Shibuya", "lat": 35.6613, "lon": 139.7047 },
+        { "id": "d2-pizza", "time": "간식", "emoji": "🍕", "title": "PIZZA SLICE (참고)", "who": ["가족"],
+          "desc": "뉴욕식 슬라이스 피자. 시부야·다이칸야마 권역, 쇼핑 중 가볍게 한 조각. 참고용.",
+          "search": "PIZZA SLICE Tokyo", "lat": 35.6535, "lon": 139.7051 },
+        { "id": "d2-gonpachi", "time": "저녁 7:30", "emoji": "🍢", "title": "곤파치 니시아자부 ✅ 예약 확정", "who": ["가족"],
+          "desc": "영화 〈킬빌〉의 그 식당. 소바·꼬치·튀김. 시부야에서 한 정거장. ✅ 7/6 저녁 7:30 예약 완료!",
+          "search": "Gonpachi Nishi-Azabu", "lat": 35.6586, "lon": 139.7224 }
       ]
     },
     {
